@@ -49,10 +49,19 @@ Caminhos que irão existir:
 STATIC_URL = '/static/'
 ##### settings.py / STATIC_ROOT
 STATIC_ROOT = DATA_DIR / 'static'
-* /data/web/static *
+* /data/web/static
 
 ##### settings.py / MEDIA_URL
 MEDIA_URL = '/media/'
 ##### settings.py / MEDIA_ROOT
 MEDIA_ROOT = DATA_DIR / 'media'
-* /data/web/media *
+* /data/web/media
+
+
+##### djangoapp/urls.py
+Colocado um IF para se estiver DEBUG, carregar o 
+    urlpatterns
+
+E importado:
+    from django.conf import settings, 
+    from django.conf.urls.static import static
