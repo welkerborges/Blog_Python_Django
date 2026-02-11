@@ -60,20 +60,13 @@ Garantir que qualquer pessoa consiga rodar o projeto
 
 Facilitar deploy futuro
 
-### ✅ Resultado
+### 💻Apos criar o App (djangoapp)
+Criado o App dentro de uma pasta chamada djangoapp
+Para depois ser enviada ao Docket
 
-Com essa estrutura inicial:
-
-Ambiente organizado
-
-Configurações locais isoladas
-
-Versionamento limpo
-
-Base pronta para integração com Docker
-
-O projeto está preparado para evoluir com boas práticas desde o início 🚀
-
+Runserver
+▶python djangoapp/manage.py runserver
+Ira criar o db.sqlite3, pode apaga-lo, apaguei pois ira ser rodado em outro banco
 
 ## Comandos importantes
 
