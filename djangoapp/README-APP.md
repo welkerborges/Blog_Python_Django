@@ -16,7 +16,7 @@ depois altere o DEBUG
     DEBUG = bool(int(os.getenv('DEBUG',0)))
 Pegamos a variavel bool (1,0), e se não encontrado o aqruivo .env para carregar o DEBUG, ira carregar como False(0)
 
-##### *settings.py / ALLOWED_HOSTS*
+##### settings.py / ALLOWED_HOSTS
 ALLOWED_HOSTS =  [
     h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
     if h.strip() ]
@@ -37,3 +37,22 @@ DATABASES = {
         'PORT': os.getenv('POSTGRES_PORT', 'change-me'),
     }
 }
+
+##### settings.py / criado DATA_DIR
+Utilizando Parent, volta uma pasta, deixando na raiz do projeto
+    DATA_DIR = BASE_DIR.parent / 'data' / 'web'
+Caminhos que irão existir:
+/data/web/static
+/data/web/media
+
+##### settings.py / STATIC_URL
+STATIC_URL = '/static/'
+##### settings.py / STATIC_ROOT
+STATIC_ROOT = DATA_DIR / 'static'
+* /data/web/static *
+
+##### settings.py / MEDIA_URL
+MEDIA_URL = '/media/'
+##### settings.py / MEDIA_ROOT
+MEDIA_ROOT = DATA_DIR / 'media'
+* /data/web/media *
