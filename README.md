@@ -2,6 +2,7 @@
 
 
 #### criando Venv, caso erro de 'ExecutionPolicy' rode 
+▶ python -m venv venv
 ▶ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 ▶ .\venv\Scripts\activate
 
