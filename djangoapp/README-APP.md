@@ -16,7 +16,7 @@ depois altere o DEBUG
     DEBUG = bool(int(os.getenv('DEBUG',0)))
 Pegamos a variavel bool (1,0), e se não encontrado o aqruivo .env para carregar o DEBUG, ira carregar como False(0)
 
-##### settings.py / ALLOWED_HOSTS
+##### *settings.py / ALLOWED_HOSTS*
 ALLOWED_HOSTS =  [
     h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
     if h.strip() ]
