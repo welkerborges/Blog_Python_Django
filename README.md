@@ -67,7 +67,7 @@ Ira criar o db.sqlite3, pode apaga-lo, apaguei pois ira ser rodado em outro banc
 ## Comandos importantes
 
 
-#### criando Venv, caso erro de 'ExecutionPolicy' rode 
+#### criando Venv, caso erro de 'ExecutionPolicy'
 ▶ python -m venv venv
 ▶ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 ▶ .\venv\Scripts\activate
