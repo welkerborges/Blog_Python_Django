@@ -16,9 +16,6 @@ Dentro dela, foi configurado o arquivo:
 
 Esse arquivo contém configurações personalizadas do meu VS Code (formatação).
 
-#### 📌 Importante:
-A pasta .vscode foi marcada como untracked no GitHub, pois contém apenas configurações locais do ambiente de desenvolvimento, não sendo necessária para outros desenvolvedores ou para o ambiente de produção.
-
 ### 🐍 2. Criação do Ambiente Virtual (Venv)
 
 Em seguida, foi criado um ambiente virtual Python:
@@ -29,7 +26,7 @@ Esse ambiente foi criado apenas para evitar erros de interpretação do VS Code 
 #### ⚠️ Porém, este não será o ambiente principal do projeto.
 O ambiente oficial será gerenciado via Docker, garantindo Independência do sistema operacional
 
-📌 Assim como a pasta .vscode, o diretório .venv também foi configurado como untracked no GitHub.
+📌 O diretório .venv foi configurado como untracked para o GitHub.
 
 ### 🚫 3. Configuração do .gitignore
 
@@ -40,7 +37,6 @@ Na raiz do projeto foi criado o arquivo:
 Foi utilizado um modelo amplamente adotado na comunidade (baseado em projetos Python).
 Foram adicionadas as seguintes entradas personalizadas:
 
-.vscode/
 .venv/
 
 Isso garante que:
