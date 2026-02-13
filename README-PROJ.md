@@ -62,3 +62,16 @@ Para depois ser enviada ao Docket
 Runserver
 ▶python djangoapp/manage.py runserver
 Ira criar o db.sqlite3, pode apaga-lo, apaguei pois ira ser rodado em outro banco
+
+
+
+### Script/commands.sh
+Execulta o
+
+▶python manage.py collectstatic
+
+▶python manage.py migrate
+
+▶python manage.py runserver
+
+
