@@ -41,11 +41,19 @@ Dentro da pasta do projeto
 
  `docker-compose up --build --force-recreate` (caso tenha dado problema e precisar realizar o processo novamente)
 
- 
+ >###  startand container
+
+ `docker-compose up`
+
+ >###  Pausar container
+
+`Ctrl + C`
+`docker-compose down` #limpa o container e o composer, (deixa a pasta data/ e as imagens) 
+
 ### Limpeza total do ambiente (Reset):
 Se precisar resetar o banco de dados e os volumes:
 
-`docker-compose down` #limpa o container e o composer, (deixa a pasta data/ e as imagens)
+`docker-compose down`
 
 `docker-compose down -v --remove-orphans`
 
@@ -53,14 +61,15 @@ Se precisar resetar o banco de dados e os volumes:
 
 #### 🗺guia geral commands
 
-`docker-compose start` ligar o projeto inteiro (Recomendado):
-Use o Compose, pois ele garante que a rede entre o Django e o Banco de Dados seja reestabelecida corretamente.
-
 `docker rm 123` Apaga um container pelo ID (as 3 iniciais digitos do ID do container)
 
 `docker-compose ps` (mostra o status dos serviços deste projeto).
 
 `docker ps -a` (mostra todos os containers do seu computador).
+
+
+
+
 
 ### 📋 Guia Rápido: Docker-Compose vs Docker
 
