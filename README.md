@@ -1,93 +1,28 @@
 
-## ⚙️ Configuração Inicial do Projeto
+> ## Comandos importantes
+> ### criando Venv, caso erro de 'ExecutionPolicy'
+> ▶ python -m venv venv
 
-Antes de iniciar o desenvolvimento da aplicação, foi realizada toda a configuração do ambiente para garantir organização, padronização e compatibilidade futura com Docker.
+> ▶ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 
-### 📁 1. Configuração do VS Code
-
-O primeiro passo foi configurar o ambiente de desenvolvimento no VSCode.
-
-Foi criada uma pasta chamada:
-
-.vscode
-Dentro dela, foi configurado o arquivo:
-    settings.json
+> ▶ .\venv\Scripts\activate
 
 
-Esse arquivo contém configurações personalizadas do meu VS Code (formatação).
+> ### Importante
+> Atualizar o PIP apos criar o venv
 
-### 🐍 2. Criação do Ambiente Virtual (Venv)
+> ▶ pip install pip --upgrade
 
-Em seguida, foi criado um ambiente virtual Python:
+> ou
 
-.venv
+> ▶ python.exe -m pip install --upgrade pip
 
-Esse ambiente foi criado apenas para evitar erros de interpretação do VS Code (como alertas de interpretador Python não configurado).
-#### ⚠️ Porém, este não será o ambiente principal do projeto.
-O ambiente oficial será gerenciado via Docker, garantindo Independência do sistema operacional
+> ### Instalando Django
+> ▶ pip install django
+> 
+> ▶ pip freeze (para verificar instalações no ambiente)
+> ### criar o projeto e startar
+> ▶ django-admin startproject project .
+> ### iniciar server
+> ▶ python djangoapp/manage.py runserver
 
-📌 O diretório .venv foi configurado como untracked para o GitHub.
-
-### 🚫 3. Configuração do .gitignore
-
-Na raiz do projeto foi criado o arquivo:
-
-.gitignore
-
-Foi utilizado um modelo amplamente adotado na comunidade (baseado em projetos Python).
-Foram adicionadas as seguintes entradas personalizadas:
-
-.venv/
-
-Isso garante que:
-    Configurações locais do editor não sejam versionadas
-    Ambientes virtuais locais não sejam enviados ao repositório
-    Apenas o código relevante da aplicação seja versionado
-
-### 🐳 4. Estratégia de Ambiente com Docker
-
-Embora exista uma .venv local, o ambiente oficial do projeto será construído utilizando Docker.
-
-Isso permite:
-
-Criar um ambiente virtual isolado dentro do container
-
-Garantir que qualquer pessoa consiga rodar o projeto
-
-Facilitar deploy futuro
-
-### 💻Apos criar o App (djangoapp)
-Criado o App dentro de uma pasta chamada djangoapp
-Para depois ser enviada ao Docket
-
-Runserver
-▶python djangoapp/manage.py runserver
-Ira criar o db.sqlite3, pode apaga-lo, apaguei pois ira ser rodado em outro banco
-
-## Comandos importantes
-
-
-#### criando Venv, caso erro de 'ExecutionPolicy'
-▶ python -m venv venv
-▶ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-▶ .\venv\Scripts\activate
-
-
-##### Importante
-Atualizar o PIP apos criar o venv
-
-▶ pip install pip --upgrade
-ou
-▶ python.exe -m pip install --upgrade pip
-
-##### Instalando Django
-
-▶ pip install django
-▶ pip freeze (para verificar instalações no ambiente)
-
-##### criar o projeto e startar
-
-▶ django-admin startproject project .
-
-##### iniciar server
-▶ python djangoapp/manage.py runserver

@@ -26,6 +26,7 @@ EXPOSE 8000
 # imagem como uma nova camada.
 # Agrupar os comandos em um único RUN pode reduzir a quantidade de camadas da 
 # imagem e torná-la mais eficiente.
+# cria o ambiente virtual, atualiza o pip, roda o requirement.txt, cria um user sem senha, cria as pastas de data, da propriedade para o user e permissão, carrega pasta script
 RUN python -m venv /venv && \
   /venv/bin/pip install --upgrade pip && \
   /venv/bin/pip install -r /djangoapp/requirements.txt && \
