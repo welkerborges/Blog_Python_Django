@@ -75,3 +75,11 @@ Execulta o
 ▶python manage.py runserver
 
 
+
+### dotenv_files
+Contem as variaveis de ambiente .env
+
+
+
+### docker-compose.yml
+Build os containers 

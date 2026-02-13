@@ -1,0 +1,29 @@
+version: '3.9'
+
+# Container 1 APP
+services:
+  djangoapp:
+    container_name: djangoapp
+    build:
+      #build:context ira carregar o Dockerfile (o ponto indica a raiz)
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./djangoapp:/djangoapp
+      - ./data/web/static:/data/web/static/
+      - ./data/web/media:/data/web/media/
+    env_file:
+      - ./dotenv_files/.env
+    depends_on:
+      - psql
+
+# Container 2 Database
+  psql:
+    container_name: psql
+    image: postgres:15-alpine
+    volumes:
+      - ./data/postgres/data:/var/lib/postgresql/data/
+    env_file:
+      - ./dotenv_files/.env
+

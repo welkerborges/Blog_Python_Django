@@ -1,5 +1,4 @@
-
-> ## 💻Basic commands (App em construção)
+> ## 💻Basic commands
 >### criando venv (caso erro de 'ExecutionPolicy')
 
  ▶ python -m venv venv
@@ -7,7 +6,6 @@
  ▶ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 
  ▶ .\venv\Scripts\activate
-
 
 
 > ### Importante
@@ -34,3 +32,64 @@ ou
 ▶ python djangoapp/manage.py runserver
 
 
+
+>## 🐳Docker
+>###  criando container
+Dentro da pasta do projeto
+
+ `docker-compose up --build`
+
+ `docker-compose up --build --force-recreate` (caso tenha dado problema e precisar realizar o processo novamente)
+
+ 
+### Limpeza total do ambiente (Reset):
+Se precisar resetar o banco de dados e os volumes:
+
+`docker-compose down` #limpa o container e o composer, (deixa a pasta data/ e as imagens)
+
+`docker-compose down -v --remove-orphans`
+
+`Remove-Item -Recurse -Force ./data/postgres/data`
+
+#### 🗺guia geral commands
+
+`docker-compose start` ligar o projeto inteiro (Recomendado):
+Use o Compose, pois ele garante que a rede entre o Django e o Banco de Dados seja reestabelecida corretamente.
+
+`docker rm 123` Apaga um container pelo ID (as 3 iniciais digitos do ID do container)
+
+`docker-compose ps` (mostra o status dos serviços deste projeto).
+
+`docker ps -a` (mostra todos os containers do seu computador).
+
+### 📋 Guia Rápido: Docker-Compose vs Docker
+
+▶ Subir o ambiente de trabalho (Django + Postgres)
+
+* docker-compose: ✅ (Sempre: `docker-compose up`)
+
+* docker: ❌ (Dá muito trabalho: teria que subir um por um manualmente)
+
+▶ Parar o projeto temporariamente
+
+* docker-compose: ✅ (`docker-compose stop`)
+
+* docker: ❌ (Teria que dar stop em cada container pelo ID ou Nome)
+
+▶ Rodar comandos internos (Migrate, Superuser)
+
+* docker-compose: ❌ (Não é o objetivo principal do compose)
+
+* docker: ✅ (Sempre: `docker exec -it djangoapp python manage.py ...`)
+
+▶ Remover tudo e limpar o ambiente
+
+* docker-compose: ✅ (`docker-compose down`)
+
+* docker: ❌ (Teria que remover container por container e as redes)
+
+▶ Ver o que está rodando no PC inteiro
+
+* docker-compose: ❌ (Só mostra o projeto da pasta atual)
+*
+* docker: ✅ (`docker ps -a`)
