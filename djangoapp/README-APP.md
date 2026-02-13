@@ -1,32 +1,29 @@
-#### djangoapp/requeriments.txt
+#### ➡djangoapp/requeriments.txt
 criado para colocar as dependecias que iremos usar para o container 🐳Docker
 
-#### .dockerignore
+#### ➡.dockerignore
 Para ignorar arquivos e não serem enviado ao container 🐳Docker
 
-#### dotenv_files/.env-example
+#### ➡dotenv_files/.env-example
 Semelhante ao .env
 Mas como exemplo de como pode subir o projeto em outro local
 
-#### settings.py - Alterações para ler a informações do .env
-##### settings.py / DEBUG
+>## ➡settings.py - Alterações para ler a informações do .env
+>##### settings.py / DEBUG
 alterado o Debug para buscar as variaveis de ambiente
     import os
 depois altere o DEBUG
     DEBUG = bool(int(os.getenv('DEBUG',0)))
 Pegamos a variavel bool (1,0), e se não encontrado o aqruivo .env para carregar o DEBUG, ira carregar como False(0)
-
-##### settings.py / ALLOWED_HOSTS
+>##### settings.py / ALLOWED_HOSTS
 ALLOWED_HOSTS =  [
     h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
     if h.strip() ]
 ALLOWED_HOSTS é uma string, acima estamos tentando pegar ela da variavel de amnbiente
 Garantingo que irão vir sem espaços extras(strip)
-
-##### settings.py / SECRET_KEY
+>##### settings.py / SECRET_KEY
 SECRET_KEY = os.getenv('SECRET_KEY','change-me')
-
-##### settings.py / DATABASES
+>##### settings.py / DATABASES
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE', 'change-me'),
@@ -37,31 +34,25 @@ DATABASES = {
         'PORT': os.getenv('POSTGRES_PORT', 'change-me'),
     }
 }
+>##### djangoapp/urls.py
+Colocado um IF para se estiver DEBUG, carregar o 
+    urlpatterns
+>E importado:
+    from django.conf import settings, 
+    from django.conf.urls.static import static
 
-##### settings.py / criado DATA_DIR
+>## ➡Criando DATA_DIR / STATIC_URL / MEDIA_URL
+>##### settings.py / criado DATA_DIR
 Utilizando Parent, volta uma pasta, deixando na raiz do projeto
     DATA_DIR = BASE_DIR.parent / 'data' / 'web'
 Caminhos que irão existir:
 /data/web/static
 /data/web/media
-
-##### settings.py / STATIC_URL
+>##### settings.py / STATIC_URL
 STATIC_URL = '/static/'
-##### settings.py / STATIC_ROOT
-STATIC_ROOT = DATA_DIR / 'static'
-* /data/web/static
-
-##### settings.py / MEDIA_URL
+>##### settings.py / STATIC_ROOT
+STATIC_ROOT = DATA_DIR / 'static' **#/data/web/static**
+>##### settings.py / MEDIA_URL 
 MEDIA_URL = '/media/'
-##### settings.py / MEDIA_ROOT
-MEDIA_ROOT = DATA_DIR / 'media'
-* /data/web/media
-
-
-##### djangoapp/urls.py
-Colocado um IF para se estiver DEBUG, carregar o 
-    urlpatterns
-
-E importado:
-    from django.conf import settings, 
-    from django.conf.urls.static import static
+>##### settings.py / MEDIA_ROOT
+MEDIA_ROOT = DATA_DIR / 'media' **#/data/web/media**
