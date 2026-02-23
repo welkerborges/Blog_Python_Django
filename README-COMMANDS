@@ -67,9 +67,11 @@ Se precisar resetar o banco de dados e os volumes:
 
 `docker ps -a` (mostra todos os containers do seu computador).
 
+`docker-compose run --rm djangoapp ....` (Execulta o py dentro do projeto)
 
+`docker-compose run --rm djangoapp python manage.py makemigrations` (Execulta o makemigrate)
 
-
+`docker-compose run --rm djangoapp python manage.py migrate` (Execulta o migrate)
 
 ### 📋 Guia Rápido: Docker-Compose vs Docker
 
