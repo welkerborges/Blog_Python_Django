@@ -73,6 +73,16 @@ Se precisar resetar o banco de dados e os volumes:
 
 `docker-compose run --rm djangoapp python manage.py migrate` (Execulta o migrate)
 
+`docker-compose run --rm djangoapp python manage.py createsuperuser` ( Criar super user no django)
+
+`docker-compose run --rm djangoapp python manage.py startapp blog` ( Cria o App)
+
+
+
+
+
+
+
 ### 📋 Guia Rápido: Docker-Compose vs Docker
 
 ▶ Subir o ambiente de trabalho (Django + Postgres)

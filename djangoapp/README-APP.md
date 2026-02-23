@@ -56,3 +56,8 @@ STATIC_ROOT = DATA_DIR / 'static' **#/data/web/static**
 MEDIA_URL = '/media/'
 >##### settings.py / MEDIA_ROOT
 MEDIA_ROOT = DATA_DIR / 'media' **#/data/web/media**
+
+>#### User para teste
+welker
+welker@teste.com
+senha
