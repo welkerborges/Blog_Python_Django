@@ -77,7 +77,7 @@ Se precisar resetar o banco de dados e os volumes:
 
 `docker-compose run --rm djangoapp python manage.py startapp blog` ( Cria o App)
 
-
+`docker-compose run djangoapp python manage.py runserver 0.0.0.0:8000` (Inciar server)
 
 
 
