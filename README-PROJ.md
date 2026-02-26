@@ -29,7 +29,7 @@
 
 📝 Criação da aplicação blog dentro do projeto Django.
 
-⚙️ Adição do app ao INSTALLED_APPS no arquivo settings.py.
+⚙️ Adição do app 'blog' ao INSTALLED_APPS no arquivo settings.py.
 
 🌐 Inclusão da rota do app no project/urls.py usando include('blog.urls').
 
@@ -38,3 +38,11 @@
 🗂️ Dentro do arquivo criado no passo anterior, foi definido app_name = 'blog' para organizar o namespace das rotas do aplicativo.
 
 🚪 Ainda no mesmo arquivo de rotas do app, foi criada a rota inicial path('', index, name='index'), apontando para a view principal
+
+Criado os Htmls parciais, _header.html, _footer.html e _pagination.html, dentro da pasta 'blog(APPNAME)/templates/blog/partials/_head.html'
+
+Ajustado no base.html, para dar um 'include', nas 3 partes dentro do corpo dele
+
+Criado um novo APP chamado 'site_setep', para ter as configurações especificas do Blog
+
+⚙️ Adição do app 'site_setep' ao INSTALLED_APPS no arquivo settings.py.
